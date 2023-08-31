@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        background-image: url(https://i0.wp.com/www.3wallpapers.fr/wp-content/uploads/2023/02/wallpaper_iphone_stars_01-scaled.jpg);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        overflow: hidden;
+    }
+    .container{
+       
+        font-size: 10px;
+        height: 40em;
+        width: 40em;
+        position: relative;
+    }
+    .sun{
+        color: white;
+        position: absolute;
+        top: 15em;
+        left: 15em;
+        
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        background-color: yellow;
+        box-shadow: 0 0 3em rgba(255, 255, 255, 0.711);
+    }
+    .earth,.moon,.mercury,.saturn{
+        position: absolute;
+        border-style: solid;
+       border-color: white transparent transparent transparent;
+       border-width: 0.1em 0.1em 0 0;
+       border-radius: 50%;
+    }
+    .saturn{
+        top: -5em;
+        left: -4em;
+        width: 50em;
+        height: 50em;
+       animation: orbit 50.5s linear infinite ;
+    }
+    .mercury{
+        color: white;
+        top: 0em;
+        left: 0em;
+        width: 40em;
+        height: 40em;
+       animation: orbit 35.5s linear infinite ;
+    }
+    .earth{
+        top: 5em;
+        left: 5em;
+        width: 30em;
+        height: 30em;
+       animation: orbit 26.5s linear infinite ;
+    }
+    .moon{
+        color: white;
+        top: 0;
+        right: 0;
+        width: 8em;
+        height: 8em;
+       animation: orbit 2.5s linear infinite ;
+    }
+    .earth::before,.moon::before,.mercury::before,.saturn::before{
+content: "";
+position: absolute;
+border-radius: 50%;
+
+    }
+    .saturn::before{
+        top: 4.8em;
+        right: 4.8em;
+        width: 5em;
+        height: 5em;
+        background-color: rgb(38, 255, 0);
+    }
+    .mercury::before{
+        top: 3.8em;
+        right: 3.8em;
+        width: 4em;
+        height: 4em;
+        background-color: rgb(38, 255, 0);
+    }
+    .earth::before{
+        top: 2.8em;
+        right: 2.8em;
+        width: 3em;
+        height: 3em;
+        background-color: aqua;
+
+    }
+    .moon::before{
+        top: 0.8em;
+        right: 0.2em;
+        width:1.2em;
+        height: 1.2em;
+        background-color: beige;
+    }
+
+    @keyframes orbit{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    span{
+        color: white;
+        text-align: end;
+        font-size: 20px;
+        position: relative;
+        left: -15px;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="sun"><span>sun</span></div>
+        <div class="mercury"></div>
+        <div class="saturn"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+</html>
